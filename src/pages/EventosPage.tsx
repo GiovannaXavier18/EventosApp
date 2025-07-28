@@ -52,7 +52,7 @@ export function EventosPage() {
 
   const inscricaoMutation = useMutation({
     mutationFn: createInscricao,
-    onSuccess: (data, variables) => {
+    onSuccess: (_data, variables) => {
       queryClient.invalidateQueries({ queryKey: ['minhasInscricoes'] });
       const eventId = variables.eventoId;
       const event = eventos?.find(e => e.id === eventId);
